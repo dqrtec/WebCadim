@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+		.botao-colorido{
+			border-radius: 100px;
+			background-image: linear-gradient(to right, #7450fe 0%, #7450fe 50%, #21d397 100%);
+			border: 1px solid #fff;
+			color: #fff;
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.botao-colorido:hover{
+			background-image: linear-gradient(to right, #21d397 0%, #7450fe 50%, #7450fe 100%);
+			color: #fff;
+		}
+
+	</style>
+
+    <style type="text/css">
+    	.filto{
+    		display: inline-block;
+    	}
+
+    	.data-resgate{
+    		display: inline-block;
+    	}
+
+    	#do-lado{
+    		display: inline-block;
+    	}
+    	.investimento{
+    		width: 300px;
+    		height: 800px;
+    		display: inline-block;
+    	}
+    </style>
+</head>
+<body>
+	<div class="filtos">
+		Filtrar por
+		
+		<div class="filto">
+			<div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Risco
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li>Risco 1</li>
+			      <li>Risco 2</li>
+			      <li>Risco 3</li>
+			    </ul>
+			</div>
+		</div>
+
+		<div class="filto">
+			<div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rendimentos
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li>Rendimentos 1</li>
+			      <li>Rendimentos 2</li>
+			      <li>Rendimentos 3</li>
+			    </ul>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="lista-investimentos">
+		<div class="nome-banco">Banco 2</div>
+
+		<div class="investimento">
+			<div class="titulo-investimento">
+				Fundo DI
+			</div>
+			Risco:
+			<div class="tipo-risco">Conservador</div>
+			Rendimento:
+			<div class="rendimento">75% CDI</div>
+			Data de resgate:
+			<div class="data-resgate">04/10/2021</div>
+			<div class="botao-colorido btn" id="do-lado">Investir</div>
+
+		</div>
+
+		<div class="investimento">
+			<div class="titulo-investimento">
+				Fundo DI
+			</div>
+			Risco:
+			<div class="tipo-risco">Conservador</div>
+			Rendimento:
+			<div class="rendimento">75% CDI</div>
+			Data de resgate:
+			<div class="data-resgate">04/10/2021</div>
+			<div class="botao-colorido btn" id="do-lado">Investir</div>
+
+		</div>
+
+		<div class="investimento">
+			<div class="titulo-investimento">
+				Fundo DI
+			</div>
+			Risco:
+			<div class="tipo-risco">Conservador</div>
+			Rendimento:
+			<div class="rendimento">75% CDI</div>
+			Data de resgate:
+			<div class="data-resgate">04/10/2021</div>
+			<div class="botao-colorido btn" id="do-lado">Investir</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!--BOTAO COLORIDO-->
+	<style type="text/css">
+		.botao-colorido{
+			border-radius: 100px;
+			background-image: linear-gradient(to right, #7450fe 0%, #7450fe 50%, #21d397 100%);
+			border: 1px solid #fff;
+			color: #fff;
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.botao-colorido:hover{
+			background-image: linear-gradient(to right, #21d397 0%, #7450fe 50%, #7450fe 100%);
+			color: #fff;
+		}
+
+	</style>
+	<!--BOTAO COLORIDO-->    
+
+    <!--MENU BARRA-->
+    <style type="text/css">
+
+    	.barra-navegacao{
+    		padding: 10px;
+    		padding-right: 15px;
+    		background-color: #7B68EE;
+    	}
+
+    	.lista-menu li{
+    		padding-right: 40px;
+    	}
+
+    	#asd a{
+    		color: #fff;
+    	}
+    	#asd a:hover{
+    		font-size: 15px;
+    		color: #fff;
+    		background-color: #7B78FF;
+    	}
+
+    	.bota-cadastrar{
+    		border-radius: 15px;
+    		background-color: #7B68EE;
+    		border-color: #fff;
+    		color: #fff;
+    	}
+
+    	.bota-cadastrar:hover {
+    		border-radius: 15px;
+    		background-color: #fff;
+    		border-color: #fff;
+    		color: #000;
+    	}
+    </style>
+    <!--MENU BARRA-->
+
+    <!--Conteudo 1-->
+    <style type="text/css">
+    	.gradiente{
+    		width: 100%;
+    		height: 600px;
+    		/*background-image: linear-gradient(-45deg, #00008B, #7B68EE);*/
+
+    		background: -moz-linear-gradient(160deg, #7B68EE 0%, #7B68EF 50%, #00008A 51%, #00008B 100%); 
+    		background: -webkit-linear-gradient(160deg, #7B68EE 0%,#7B68EF 50%,#00008A 51%,#00008B 100%);
+    		background: linear-gradient(160deg, #7B68EE 0%,#7B68EE 50%,#00008B 51%,#00008B 100%);
+    		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7B68EE', endColorstr='#00008B',GradientType=1 );
+    	}
+
+    	.texto-conteudo{
+    		width: 30%;
+    		padding-top: 80px;
+    		color: #fff !important;
+    		font-family: 'Poppins', sans-serif;
+    	}
+
+    	.conteudo{
+    		display: inline-block;
+    	}
+
+    	.imagem-conteudo{
+    		padding-left: 50px;
+    	}
+    </style>
+    <!--Conteudo 1-->
+
+    <!--Conteudo 2-->
+    <style type="text/css">
+    	.conteudo-branco{
+    		margin-top: 140px;
+    		width: 100%;
+    		height: 600px;
+    		background-color: #ffffff;
+    	}
+
+    	.texto-conteudo-2{
+    		width: 30%;
+    		padding-top: 80px;
+    		color: #000 !important;
+    		font-family: 'Poppins', sans-serif;
+    	}
+
+    	.conteudo-2{
+    		display: inline-block;
+    	}
+
+    	.imagem-conteudo-2{
+    		padding-left: 50px;
+    	}
+    </style>
+    <!--Conteudo 2-->
+
+    <!--Tipo investimento-->
+    <style type="text/css">
+		.tipo-investimento{
+			width: 400px;
+			height: 50px;
+			margin: auto;
+			background-color: #00008B;
+			border-radius: 10px;
+		}
+
+		.tipo-investimento div{
+			margin-top: 8px;
+			margin-left: 2px;
+			display: inline-block;
+
+			/*margin-left: 60px;*/
+		}
+
+		#tipo-ativo{
+			width: 45%;
+			background-color: #00008B;
+			color: #ffffff;
+		}
+
+		#tipo-desativo{
+			width: 45%;
+			background-color: #ffffff;
+			color: #000000;
+		}
+
+		.conteudo-tipo-investimento{
+			border: 0px solid;
+			margin: 20px;
+			padding: 40px;
+			background-color: #ffffff;
+			box-shadow: 10px 10px 40px 1px #dddddd;
+		}
+
+		#tipo-investimento{
+			width: 100%;
+		}
+
+	</style>
+    <!--Tipo investimento-->
+
+
+	<!--Sobre-->    
+    <style type="text/css">
+		footer{
+			margin-top: 140px;
+			background: #192057 !important;
+			color: #ffffff;
+		}
+		.fa {
+		  padding: 20px;
+		  font-size: 12px;
+		  width: 50px;
+		  color: #ffffff;
+		  text-decoration: none;
+		  
+		}
+
+		.fa:hover {
+		    opacity: 0.7;
+		}
+
+	</style>
+	<!--Sobre-->
+
+</head>
+<body>
+	<!--MENU BARRA-->
+	<nav class="navbar navbar-default navbar-fixed-top barra-navegacao">
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+	        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    	<span class="icon-bar"></span>                        
+			    </button>
+	            <a class="navbar-brand" href="#">Tip Invest</a>
+	        </div>
+	        
+	        <div class="row light">
+	            <div class="container-fluid">
+	                <div class="col-md-2">
+	                </div>
+
+	                <div class="collapse navbar-collapse" id="myNavbar">
+	                <div class=" navbar-right">
+	                    <ul class="nav navbar-nav lista-menu" id="asd">
+	                        <li class=""><a href="">Quem Somos</a></li>
+	                        <li class=""><a href="">Open Banking</a></li>
+	                        <li class=""><a href="">Tipos de Investimento</a></li>
+	                        <li class=""><a href="">Invista já</a></li>
+	                        <li class=""><a href="">Login</a></li>
+	                    </ul>
+	                    <button class="bota-cadastrar btn navbar-btn">Cadastrar</button>
+	                </div>
+	               	</div>
+	            </div>
+	        </div>
+	    </div>    
+	</nav>
+	<!--MENU BARRA-->
+
+	<!--Conteudo 1-->
+	<div class="gradiente">
+		<div class="container">
+			<div class="texto-conteudo conteudo">
+				<h1>Uma plataforma</h1>
+				<p>Aenean eu nulla non metus ornare feugiat id id mi. Suspendisse potenti. Quisque quis quam a dui laoreet ultrices. Integer vel tincidunt dui. Quisque dui arcu, egestas quis ex id, placerat condimentum est. Curabitur suscipit odio ac lectus rhoncus pulvinar. Aenean dolor arcu, tempus sed est vel, congue suscipit magna. Nam a cursus ipsum. Suspendisse rutrum nibh ac eleifend pretium.</p>
+			</div>
+
+			<div class="imagem-conteudo conteudo">
+				<img src="https://shrchato.netlify.com/img/core-img/about-5.png">
+			</div>
+		</div>
+	</div>
+	<!--Conteudo 1-->
+
+	<!--Conteudo 2-->
+	<div class="conteudo-branco">
+		<div class="container">
+			<div class="imagem-conteudo-2 conteudo-2">
+				<img src="https://shrchato.netlify.com/img/core-img/digital-3.png">
+			</div>
+
+			<div class="texto-conteudo-2 conteudo-2">
+				<h1>Sobre Nos</h1>
+				<p>Aenean eu nulla non metus ornare feugiat id id mi. Suspendisse potenti. Quisque quis quam a dui laoreet ultrices. Integer vel tincidunt dui. Quisque dui arcu, egestas quis ex id, placerat condimentum est. Curabitur suscipit odio ac lectus rhoncus pulvinar. Aenean dolor arcu, tempus sed est vel, congue suscipit magna. Nam a cursus ipsum. Suspendisse rutrum nibh ac eleifend pretium.</p><br>
+				<button class="botao-colorido btn">Saiba mais</button>
+			</div>
+
+		</div>
+	</div>
+	<!--Conteudo 2-->
+
+	<!--Conteudo 3-->
+	<div class="conteudo-branco">
+		<div class="container">
+
+			<div class="texto-conteudo-2 conteudo-2">
+				<h1>Open Banking</h1>
+				<p>Aenean eu nulla non metus ornare feugiat id id mi. Suspendisse potenti. Quisque quis quam a dui laoreet ultrices. Integer vel tincidunt dui. Quisque dui arcu, egestas quis ex id, placerat condimentum est. Curabitur suscipit odio ac lectus rhoncus pulvinar. Aenean dolor arcu, tempus sed est vel, congue suscipit magna. Nam a cursus ipsum. Suspendisse rutrum nibh ac eleifend pretium.</p><br>
+				<button class="botao-colorido btn">Saiba mais</button>
+			</div>
+
+			<div class="imagem-conteudo-2 conteudo-2">
+				<img src="https://shrchato.netlify.com/img/core-img/digital-5.png">
+			</div>
+		</div>
+	</div>
+	<!--Conteudo 3-->
+
+	<!--Tipo investimento-->
+	<div class="container" id="tipo-investimento">
+		<h1 align="center">Tipos de Investimentos</h1>
+		<div class="tipo-investimento">
+			<div class="btn" v-on:click="fixa()" v-bind:id="tipo_id_fixo">Renda Fixa</div>
+			<div class="btn" v-on:click="variavel()" v-bind:id="tipo_id_vari">Renda Variavel</div>
+		</div>
+
+		<div class="container well conteudo-tipo-investimento">
+			<div class="" id="" v-show="if_fixa">
+				<div class="table-responsive">          
+				  <table class="table">
+				    <thead>
+				      <tr>
+				        <th></th>
+				        <th>Tipo</th>
+				        <th>Não consegui ler</th>
+				        <th>Valor mínimo</th>
+				        <th>Vencimento</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				        <td><strong>CDB</strong></td>
+				        <td>????</td>
+				        <td>???</td>
+				        <td>100R$</td>
+				        <td>12/05/2019</td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  </div>
+			</div>
+			<div class="" id="" v-show="if_variavel">
+				Texto Variavel
+			</div>
+		</div>
+	</div>
+	<!--Tipo investimento-->
+    <script type="text/javascript">
+    	var tipo_investimento = new Vue({
+    		el:"#tipo-investimento",
+    		data:{
+    			if_fixa:true,
+    			if_variavel:false,
+    			tipo_id_fixo:"tipo-ativo",
+    			tipo_id_vari:"tipo-desativo",
+    		},
+    		methods:{
+    			fixa(){
+    				this.if_fixa = true
+    				this.if_variavel = false
+    				this.tipo_id_fixo ="tipo-ativo"
+    				this.tipo_id_vari = "tipo-desativo"
+    			},
+    			variavel(){
+    				this.if_fixa = false
+    				this.if_variavel = true
+    				this.tipo_id_fixo ="tipo-desativo"
+    				this.tipo_id_vari = "tipo-ativo"
+    			},
+    		}
+    	})
+    </script>
+    <!--Tipo investimento-->
+	<!--Tipo investimento-->
+
+	<!--Conteudo 3-->
+	<div class="conteudo-branco">
+		<div class="container">
+			<div class="imagem-conteudo-2 conteudo-2">
+				<img src="https://shrchato.netlify.com/img/core-img/digital-4.png">
+			</div>
+
+			<div class="texto-conteudo-2 conteudo-2">
+				<h1>Invista Já</h1>
+				<p>Aenean eu nulla non metus ornare feugiat id id mi. Suspendisse potenti. Quisque quis quam a dui laoreet ultrices. Integer vel tincidunt dui. Quisque dui arcu, egestas quis ex id, placerat condimentum est. Curabitur suscipit odio ac lectus rhoncus pulvinar. Aenean dolor arcu, tempus sed est vel, congue suscipit magna. Nam a cursus ipsum. Suspendisse rutrum nibh ac eleifend pretium.</p><br>
+				<button class="botao-colorido btn">Realizar Investimentos</button>
+			</div>
+
+		</div>
+	</div>
+	<!--Conteudo 3-->
+
+	<!--Sobre-->
+	<footer class="page-footer font-small indigo rodape">
+
+	  <div class="container text-center text-md-left">
+	    <div class="row">
+
+	      <div class="col-md-3 mx-auto">
+
+	        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Sobre Nós</h5>
+
+	        <ul class="list-unstyled">
+	          <li>??</li>
+	          <li>??</li>
+	          <li>??</li>
+	        </ul>
+	      </div>
+
+	      <div class="col-md-3 mx-auto">
+
+	        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Redes Sociais</h5>
+
+	        <ul class="list-unstyled">
+	          	<a href="#" class="fa fa-facebook"> Faacebook</a><br>
+	          	<a href="#" class="fa fa-twitter">Twitter</a><br>
+	          	<a href="#" class="fa fa-instagram">Instagram</a><br>
+	        </ul>
+
+	      </div>
+
+	      <div class="col-md-3 mx-auto">
+
+	        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Endereço</h5>
+
+	        <ul class="list-unstyled">
+	          <li>Rua do limoeiro , 88</li>
+	          <li>telefone: 85 9674-3295</li>
+	        </ul>
+
+	      </div>
+
+	      
+	    </div>
+
+	  </div>
+
+	  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+	    <a href=""> Tip Invest</a>
+	  </div>
+
+	</footer>
+	<!--Sobre-->
+</body>
+</html>

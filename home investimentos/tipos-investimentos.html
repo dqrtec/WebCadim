@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/vue"></script><!--importa o vue js-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<title>tipos Investimentos</title>
+
+	<style type="text/css">
+		.tipo-investimento{
+			width: 400px;
+			height: 50px;
+			margin: auto;
+			background-color: #00008B;
+			border-radius: 10px;
+		}
+
+		.tipo-investimento div{
+			margin-top: 8px;
+			margin-left: 2px;
+			display: inline-block;
+
+			/*margin-left: 60px;*/
+		}
+
+		#tipo-ativo{
+			width: 45%;
+			background-color: #00008B;
+			color: #ffffff;
+		}
+
+		#tipo-desativo{
+			width: 45%;
+			background-color: #ffffff;
+			color: #000000;
+		}
+
+		.conteudo-tipo-investimento{
+			border: 0px solid;
+			margin: 20px;
+			padding: 40px;
+			background-color: #ffffff;
+			box-shadow: 10px 10px 40px 1px #dddddd;
+		}
+
+		#tipo-investimento{
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container" id="tipo-investimento">
+		<h1 align="center">Tipos de Investimentos</h1>
+		<div class="tipo-investimento">
+			<div class="btn" v-on:click="fixa()" v-bind:id="tipo_id_fixo">Renda Fixa</div>
+			<div class="btn" v-on:click="variavel()" v-bind:id="tipo_id_vari">Renda Variavel</div>
+		</div>
+
+		<div class="container well conteudo-tipo-investimento">
+			<div class="" id="" v-show="if_fixa">
+				<div class="table-responsive">          
+				  <table class="table">
+				    <thead>
+				      <tr>
+				        <th></th>
+				        <th>Tipo</th>
+				        <th>Não consegui ler</th>
+				        <th>Valor mínimo</th>
+				        <th>Vencimento</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				        <td><strong>CDB</strong></td>
+				        <td>????</td>
+				        <td>???</td>
+				        <td>100R$</td>
+				        <td>12/05/2019</td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  </div>
+			</div>
+			<div class="" id="" v-show="if_variavel">
+				Texto Variavel
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var tipo_investimento = new Vue({
+			el:"#tipo-investimento",
+			data:{
+				if_fixa:true,
+				if_variavel:false,
+				tipo_id_fixo:"tipo-ativo",
+				tipo_id_vari:"tipo-desativo",
+			},
+			methods:{
+				fixa(){
+					this.if_fixa = true
+					this.if_variavel = false
+					this.tipo_id_fixo ="tipo-ativo"
+					this.tipo_id_vari = "tipo-desativo"
+				},
+				variavel(){
+					this.if_fixa = false
+					this.if_variavel = true
+					this.tipo_id_fixo ="tipo-desativo"
+					this.tipo_id_vari = "tipo-ativo"
+				},
+			}
+		})
+	</script>
+</body>
+</html>

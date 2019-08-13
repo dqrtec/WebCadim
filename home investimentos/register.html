@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro TIP</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form method="POST" action="http://localhost:3003/insertuser">
+        <input type="text" placeholder="Usuário" name="nome">
+        <input type="password" placeholder="Senha" name="password">
+        <input type="password" placeholder="Confirmar Senha" name="password">
+        <button>Incluir</button>
+    </form>
+
+    <style>
+        input {
+            margin-bottom: 10px;
+            display: block,
+        }
+    </style>
+    
+</body>
+</html>

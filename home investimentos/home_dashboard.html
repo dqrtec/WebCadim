@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+		.barra-informacoes{
+			float: left;
+			position: absolute;
+			height: 100%;
+			width: 30%;
+			background-color: #7054F9;
+			margin-left: 0px;
+			margin-top: 0px;
+			color: #fff;
+			display: inline-block;
+		}
+		.logo{
+			display: inline-block;
+		}
+		.sair{
+			border-radius: 20%;
+			border-color: #fff;
+		}
+
+		.texto-informacao{
+			color: blue;
+			display: inline-block;
+		}
+		.interrogacao{
+			display: inline-block;
+
+		}
+
+		.nome-banco{
+			color: gray;
+			display: inline-block;
+		}
+
+		.valor-banco{
+			color: green;
+			display: inline-block;
+		}
+
+		.linha-somatorio{
+			width: 80%;
+			border: solid 1px #fff;
+			border-radius: 1%;
+			margin-top: 0px;
+			margin-left: 1px;
+		}
+
+		.somatorio{
+			padding-top: 15px;
+			color: #fff;
+			font-size: 30px;
+		}
+
+		.panel-heading{
+			background-color: #7054F9;
+		}
+
+		#cabecalho-somatorio{
+			padding-bottom: 0px;
+			background-color: #7054F9;
+		}
+
+		.incarte{
+			border :0px;
+			width: 100%;
+			margin-top: 12px;
+		}
+		.panel-default{
+			border: none;
+		}
+
+		#collapse1{
+			margin-left: 10px;
+		}
+
+
+	</style>
+
+	<style type="text/css">
+		.botao-colorido{
+			/* background: linear-gradient(160deg, #7B68EE 0%,#7B68EE 50%,#00008B 51%,#00008B 100%);
+			*/
+			border-radius: 100px;
+			background-image: linear-gradient(to right, #7450fe 0%, #7450fe 50%, #21d397 100%);
+			border: 1px solid #fff;
+			color: #fff;
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.botao-colorido:hover{
+			background-image: linear-gradient(to right, #21d397 0%, #7450fe 50%, #7450fe 100%);
+			color: #fff;
+		}
+
+	</style>
+
+	<style type="text/css">
+
+			.barra{
+				margin: 60px;
+				position: relative;
+				display: inline-block;
+				border-bottom: 1px dotted black
+			}
+
+			.barra1{
+				background-color: gray;
+				height: 30px;
+				width: 60px;
+			}
+
+			.barra2{
+				background-color: blue;
+				height: 80px;
+				width: 60px;
+			}
+
+			.barra .ganho{
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				margin-left: -30px;
+			}
+
+			.barra .banco{
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				margin-left: -30px;
+				width: 120px;
+			}
+
+			.botao-bonito{
+				margin-left: 60px;
+			}
+
+			.rotulo{
+				color: #000;
+				font-size: 15px;
+			}
+			
+			.dado1{
+				color: #000;
+				font-size: 17px;
+			}
+
+			.dado2{
+				color: #000;
+				font-size: 25px;
+			}
+
+			.table tbody  tr  td{
+				border-top: none;
+			}
+
+			.lista-detalhes li{
+				margin-left: 100px;
+			}
+
+			.caixa-cabecalho{
+				margin-left: 150px;
+			}
+
+			.direito{
+				margin-left: 360px;
+			}
+
+
+		</style>
+</head>
+<body>
+
+
+	<div class="barra-informacoes container" id="barra-informacoes">	
+		<div class="cabecalho">
+			<div class="logo">tip invest</div>
+			<div class="sair btn pull-right ">Sair</div>
+		</div>
+
+		<div class="container incarte">
+		  <div class="panel-group">
+		    <div class="panel panel-default">
+		      <div class="panel-heading" id="cabecalho-somatorio">
+		        <h4 class="panel-title">
+		          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+		          	<div class="texto-informacao">
+		          		Saldo total 
+		          	</div>
+
+		          	<div class="interrogacao">
+		          		?
+		          	</div>
+		          	<div class="somatorio">
+		          		RS 45,0<br>
+		          		<hr class="linha-somatorio">
+		          	</div>
+		          </a>
+		        </h4>
+		      </div>
+		      <div id="collapse1" class="panel-collapse collapse">
+		        <div class="panel-body">
+		        	<div class="nome-banco">
+		        		Banco Inter
+		        	</div>
+		        	<div class="valor-banco">
+		        		+15R$
+		        	</div><br>
+		        	<div class="nome-banco">
+		        		Banco Inter
+		        	</div>
+		        	<div class="valor-banco">
+		        		+15R$
+		        	</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div> 
+		</div>
+
+		<div class="container incarte">
+		  <div class="panel-group">
+		    <div class="panel panel-default">
+		      <div class="panel-heading" id="cabecalho-somatorio">
+		        <h4 class="panel-title">
+		          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+		          	<div class="texto-informacao">
+		          		Saldo total 
+		          	</div>
+
+		          	<div class="interrogacao">
+		          		?
+		          	</div>
+		          	<div class="somatorio">
+		          		RS 45,0<br>
+		          		<hr class="linha-somatorio">
+		          	</div>
+		          </a>
+		        </h4>
+		      </div>
+		      <div id="collapse2" class="panel-collapse collapse">
+		        <div class="panel-body">
+		        	<div class="nome-banco">
+		        		Banco Inter
+		        	</div>
+		        	<div class="valor-banco">
+		        		+15R$
+		        	</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div> 
+		</div>
+
+		<div class="container incarte">
+		  <div class="panel-group">
+		    <div class="panel panel-default">
+		      <div class="panel-heading" id="cabecalho-somatorio">
+		        <h4 class="panel-title">
+		          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+		          	<div class="texto-informacao">
+		          		Saldo total 
+		          	</div>
+
+		          	<div class="interrogacao">
+		          		?
+		          	</div>
+		          	<div class="somatorio">
+		          		RS 45,0<br>
+		          		<hr class="linha-somatorio">
+		          	</div>
+		          </a>
+		        </h4>
+		      </div>
+		      <div id="collapse3" class="panel-collapse collapse">
+		        <div class="panel-body">
+		        	<div class="nome-banco">
+		        		Banco Inter
+		        	</div>
+		        	<div class="valor-banco">
+		        		+15R$
+		        	</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div> 
+		</div>
+
+
+
+		<footer class="bottom-align-text">
+			Informações relativas a investimentos pré-fixados
+		</footer>
+
+	</div>
+
+
+
+
+
+	<div class="direito">
+
+		<div class="home">
+			<div class="panel">
+				<div class="panel-header caixa-cabecalho">
+					<ul class="list-inline lista-detalhes">
+						<li>Produto</li>
+						<li>Emissor</li>
+						<li>Risco</li>
+						<li>Rentabilidade</li>
+						<li>Detalhes</li>
+					</ul>
+				</div>
+				<div class="panel-body">
+					<div class="container incarte">
+					  <div class="panel-group">
+					    <div class="panel panel-default">
+					      <div class="panel-heading">
+					        <h4 class="panel-title">
+					          <a data-toggle="collapse" data-parent="#accordion" href="#investimento1">
+					          	<ul class="list-inline lista-detalhes">
+					          		<li>Fundo DI</li>
+					          		<li>Banco 1</li>
+					          		<li>Conservador</li>
+					          		<li>75% CDI</li>
+					          		<li>^</li>
+					          	</ul>
+					          </a>
+					        </h4>
+					      </div>
+					      <div id="investimento1" class="panel-collapse collapse in">
+					        <div class="panel-body">
+					        	<table class="table">
+					        		<tr>
+					        			<td rowspan="2">
+        						        	<div class="plotagem">
+        						        		<div class="barra barra1">
+        						        			<span class="ganho">
+        						        				Ganho de 102,39
+        						        			</span>
+        						        			<span class="banco">
+        						        				Fundo DI
+        						        			</span>
+        						        		</div>
+        						        		<div class="barra barra2">
+        						        			<span class="ganho">
+        						        				Ganho de 156,98
+        						        			</span>
+        						        			<span class="banco">
+        						        				Fundo de Acoes Banco 3
+        						        			</span>
+        						        		</div>
+        						        	</div>
+        						        	<div class="botoes">
+        						        		<div class="btn botao-bonito botao-colorido">Resgatar</div>
+        				        				<div class="btn botao-bonito botao-colorido">Resgatar</div>
+        						        	</div>
+					        			</td>
+					        			<td> <div class="rotulo"> aporte </div> <br> <div class="dado1">2300 </div> </td>
+					        			<td> <div class="rotulo"> prazo </div><br><div class="dado1"> 3anos </div> </td>
+					        		</tr>
+					        		<tr>
+					        			<td colspan="2"> <div class="dado1"> total </div><br><div class="dado2"> 2402,39 </div> </td>
+					        		</tr>
+					        	</table>
+					        </div>
+					      </div>
+					    </div>
+					  </div> 
+					</div>
+
+
+					<div class="container incarte">
+					  <div class="panel-group">
+					    <div class="panel panel-default">
+					      <div class="panel-heading">
+					        <h4 class="panel-title">
+					          <a data-toggle="collapse" data-parent="#accordion" href="#investimento2">
+					          	<ul class="list-inline lista-detalhes">
+					          		<li>Fundo DI</li>
+					          		<li>Banco 1</li>
+					          		<li>Conservador</li>
+					          		<li>75% CDI</li>
+					          		<li>^</li>
+					          	</ul>
+					          </a>
+					        </h4>
+					      </div>
+					      <div id="investimento2" class="panel-collapse collapse">
+					        <div class="panel-body">
+					        	<table class="table">
+					        		<tr>
+					        			<td rowspan="2">
+        						        	<div class="plotagem">
+        						        		<div class="barra barra1">
+        						        			<span class="ganho">
+        						        				Ganho de 102,39
+        						        			</span>
+        						        			<span class="banco">
+        						        				Fundo DI
+        						        			</span>
+        						        		</div>
+        						        		<div class="barra barra2">
+        						        			<span class="ganho">
+        						        				Ganho de 156,98
+        						        			</span>
+        						        			<span class="banco">
+        						        				Fundo de Acoes Banco 3
+        						        			</span>
+        						        		</div>
+        						        	</div>
+        						        	<div class="botoes">
+        						        		<div class="btn botao-bonito botao-colorido">Resgatar</div>
+        				        				<div class="btn botao-bonito botao-colorido">Resgatar</div>
+        						        	</div>
+					        			</td>
+					        			<td> <div class="rotulo"> aporte </div> <br> <div class="dado1">2300 </div> </td>
+					        			<td> <div class="rotulo"> prazo </div><br><div class="dado1"> 3anos </div> </td>
+					        		</tr>
+					        		<tr>
+					        			<td colspan="2"> <div class="dado1"> total </div><br><div class="dado2"> 2402,39 </div> </td>
+					        		</tr>
+					        	</table>
+					        </div>
+					      </div>
+					    </div>
+					  </div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

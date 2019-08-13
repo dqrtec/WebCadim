@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+    	.comparar-rendimentos{
+    		margin-left: 30%;
+    		width: 40%;
+    		height: 150px;
+    		border: 1px solid;
+    		border-radius: 2%;
+    	}
+    	.titulo{
+    		margin-left: 20%;
+    	}
+
+    	.list-inline li{
+    		margin-left: 10%;
+    		color: #00FFFF;
+    	}
+
+    	.simulador{
+    		width: 100%;
+    	}
+
+    	
+
+    	.slider {
+    	  -webkit-appearance: none;
+    	  height: 3px;
+    	  border-radius: 5px;
+    	  background: #00ffff;
+    	  outline: none;
+    	  opacity: 0.7;
+    	  -webkit-transition: .2s;
+    	  transition: opacity .2s;
+    	}
+
+    	.slider:hover {
+    	  opacity: 1;
+    	}
+
+    	.atributo{
+    		display: inline-block;
+    	}
+
+    	.slider::-webkit-slider-thumb {
+    	  -webkit-appearance: none;
+    	  appearance: none;
+    	  width: 15px;
+    	  height: 15px;
+    	  border-radius: 50%;
+    	  background: #00ffff;
+    	  cursor: pointer;
+    	}
+
+    	.slider::-moz-range-thumb {
+    	  width: 15px;
+    	  height: 15px;
+    	  border-radius: 50%;
+    	  background: #00ffff;
+    	  cursor: pointer;
+    	}
+
+    	.valor-simulacao{
+    		display: inline-block;
+    		margin-left: 20px;
+    	}
+    	.final-simulacao{
+    		font-size: 30px;
+    	}
+
+
+
+
+    	.barra{
+    		margin: 60px;
+    		position: relative;
+    		display: inline-block;
+    	}
+
+    	.barra .ganho{
+    		position: absolute;
+    		bottom: 100%;
+    		left: 50%;
+    		margin-left: -30px;
+    	}
+
+    	.barra .banco{
+    		position: absolute;
+    		top: 100%;
+    		left: 50%;
+    		margin-left: -30px;
+    		width: 120px;
+    	}
+
+
+
+    	.botao-bonito{
+    		margin-left: 60px;
+    	}
+
+
+
+    	.barra1{
+    		background-color: blue;
+    		height: 80px;
+    		width: 60px;
+    	}
+    	.barra2{
+    		background-color: blue;
+    		height: 80px;
+    		width: 60px;
+    	}
+    	.barra3{
+    		background-color: blue;
+    		height: 80px;
+    		width: 60px;
+    	}
+    	.barra4{
+    		background-color: blue;
+    		height: 80px;
+    		width: 60px;
+    	}
+    	.barra5{
+    		background-color: blue;
+    		height: 80px;
+    		width: 60px;
+    	}
+
+
+    	
+    </style>
+
+    <style type="text/css">
+		.botao-colorido{
+			/* background: linear-gradient(160deg, #7B68EE 0%,#7B68EE 50%,#00008B 51%,#00008B 100%);
+			*/
+			border-radius: 100px;
+			background-image: linear-gradient(to right, #7450fe 0%, #7450fe 50%, #21d397 100%);
+			border: 1px solid #fff;
+			color: #fff;
+			-webkit-transition: background-image 0.2s ease-in-out;
+			transition: background-image 0.2s ease-in-out;
+		}
+
+		.botao-colorido:hover{
+			background-image: linear-gradient(to right, #21d397 0%, #7450fe 50%, #7450fe 100%);
+			color: #fff;
+		}
+
+	</style>
+	
+</head>
+<body>
+	<div class="row">
+		<div class="comparar-rendimentos">
+			<div class="titulo">
+				Comparar rendimentos da poupança com
+			</div>
+			<br>
+				<strong>
+				<ul class="list-inline">
+					<li>CDB</li>
+					<li>LCI</li>
+					<li>LCA</li>
+					<li>Fundos</li>
+				</ul>
+				</strong>
+		</div>
+	</div>
+
+	<div class="simulador">
+		<div class="atributo">
+		    <label for="">Invista<br> R$</label>
+		    <input type="text" name="" v-model="valor">
+		    <input type="range" class="slider" v-model="valor" min="0" step="5000" max="50000">
+		</div>
+		<div class="atributo">
+		    <label for="">Durante<br></label>
+		    <input type="text" name="" v-model="anos"><label>anos</label>
+		    <input type="range" class="slider" v-model="anos" min="1" step="1" max="10">
+		</div>
+
+		<div class="valor-simulacao">
+			<div class="final-simulacao">
+				31269,88
+			</div><br>
+			<div class="info-final-simulacao">
+				Rendimentos baseados nas suas finanças
+			</div>
+		</div>
+
+
+		<div class="plotagem">
+			<div class="barra barra1">
+				<span class="ganho">
+					Rendeu 965,53
+				</span>
+				<span class="banco">
+					Poupança
+				</span>
+			</div>
+			<div class="barra barra2">
+				<span class="ganho">
+					Rendeu 1.072,56
+				</span>
+				<span class="banco">
+					LCA Banco 2
+					<br><div class="btn botao-colorido">Investir</div>
+				</span>
+			</div>
+			<div class="barra barra3">
+				<span class="ganho">
+					Rendeu 1.147,37
+				</span>
+				<span class="banco">
+					LCI Banco 1
+					<br><div class="btn botao-colorido">Investir</div>
+				</span>
+			</div>
+			<div class="barra barra4">
+				<span class="ganho">
+					Rendeu 1.228,17
+				</span>
+				<span class="banco">
+					CDB Banco 3
+					<br><div class="btn botao-colorido">Investir</div>
+				</span>
+			</div>
+			<div class="barra barra5">
+				<span class="ganho">
+					Rendeu 1.269,88
+				</span>
+				<span class="banco">
+					Fundo de Ações Banco 3
+					<br><div class="btn botao-colorido">Investir</div>
+				</span>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+		var app = new Vue({
+			el:".simulador",
+			data:{
+				valor:30000,
+				anos:3,
+			}
+		})
+	</script>
+</body>
+</html>
