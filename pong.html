@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+Hello<br><b>JS World!</b>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+	
+	var canvas;
+	var canvasContext;
+	var fps = 60;
+
+	var jogador1=0;
+	var barraX = 0;
+	var barraY=0;
+
+	var jogador2=0;
+	var barraX1=0;
+	var barraY2=0;
+	var vel2=4;	
+	
+	
+
+	var ballX = 300;
+	var ballY = 10;
+	var ballSpeedX = 5;
+	var ballSpeedY = 5;
+	
+
+	window.onload = function() {
+		canvas = document.getElementById('gameCanvas');
+		canvasContext =canvas.getContext('2d');
+
+		canvas.addEventListener('mousemove',
+		function(evt){
+			var mousePos = getMousePos(this, evt);
+			// barraX=mousePos.x;
+			barraY = mousePos.y;
+		});
+	}
+
+	function move(){
+		
+		// Colisão com as paredes
+		ballY = ballY + ballSpeedY;
+		if (ballY>=canvas.height || ballY <= 0)
+			ballSpeedY = - ballSpeedY;
+
+		ballX = ballX+ ballSpeedX;
+		
+//		// Colisão com a bola
+		// Jogador 1
+		if(ballX <= 30 & ballY >= barraY-50 & ballY <= barraY+50)
+			ballSpeedX = - ballSpeedX;
+
+		// Limitar movimento da barra
+		if(barraY <= 50)
+			barraY = 50;
+
+		if(barraY>=canvas.height-50)
+			barraY=canvas.height-50;
+
+		// Jogador2
+		if(ballX-5 >= canvas.width-30 & ballY-5 >= barraY2 & ballY <+ barraY2+100)
+			ballSpeedX = - ballSpeedX;
+
+		//Movimento jogador2
+		if(barraY2+50<ballY)
+			barraY2=barraY2+vel2;
+		else
+			barraY2=barraY2-vel2;
+
+
+		//Reset jogo
+		if (ballX <= 0){
+			jogador2 = ponto(jogador2);
+			ballREset();
+		}else if(ballX >=canvas.width){
+			jogador1 = ponto(jogador1);
+			ballREset();
+		}
+	}
+
+	function ponto(jogador){
+		jogador=jogador+1;
+		return jogador;
+
+	}
+	
+	function mariana(){
+			move();
+			draw();
+		}
+
+	setInterval(mariana, 1000/fps);
+	
+
+	function draw(){		
+		
+
+		colorRect(0,0, canvas.width, canvas.height, 'gray');
+		colorRect(10, barraY-50, 10, 100, 'white');
+		colorCircle(ballX,ballY,10,'black');
+
+		//Inimigo
+		colorRect(canvas.width-20,barraY2-50,10,100,'white');
+
+		//Interface
+		canvasContext.font = "30px Arial";
+		canvasContext.fillText(jogador1, canvas.width/2-30, 550);
+		canvasContext.fillText(jogador2, canvas.width/2+15, 550);
+
+		canvasContext.moveTo(canvas.width/2, 0);
+		canvasContext.lineTo(canvas.width/2, canvas.height);
+		canvasContext.strokeStyle = "white";
+		canvasContext.stroke();
+
+		
+	}
+
+	function colorRect(leftX, topY, width, height, drawColor){
+		canvasContext.fillStyle = drawColor;
+		canvasContext.fillRect(leftX,topY, width, height);
+
+	}
+
+	function colorCircle(centerX, centerY, radius, drawColor){
+		canvasContext.fillStyle = drawColor;
+		canvasContext.beginPath();
+		canvasContext.arc(centerX, centerY, radius, 0, Math.PI*2, true);
+		canvasContext.fill();
+	}
+
+	function getMousePos(canvas, evt){
+		var bCRect = canvas.getBoundingClientRect();
+		return{
+			x: evt.clientX - bCRect.left,
+			y: evt.clientY - bCRect.top
+		}
+	}
+
+	function ballREset() {
+			ballX=canvas.width/2;
+			ballY=canvas.height/2;
+		}
+
+	
+</script>
+</html>
