@@ -1,0 +1,27 @@
+Livros: design para quem não é designer
+
+
+FONTES
+
+Sites de fontes: 
+	https://edgewebfonts.adobe.com/fonts ,https://fonts.google.com/
+
+tipografia:
+	sem serifa: letras neutra, colocar em textos longos
+	serifadas: usadas em livros e classicos
+	serifas grossas: titulos
+	script: letras cursivas
+	gotica: textos rusticos
+
+espaços entre linhas: 1,5*(tamanho da letra)
+
+tamanho da letra: 11,14,18,24,36,48 px
+
+Usar no maximo 2 fontes diferentes no site (as fontes devem ser de tipos diferentes)
+
+Alinhamento: alinhar quase sempre a esquerda para ficar mais legivel
+
+quantidade de palavras por linha: 10 a 12
+
+Destacar texto: nunca usar dois destaques simultaneos
+	Italico: usar em citações

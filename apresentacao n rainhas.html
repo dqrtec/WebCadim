@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<!-- <table>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+			<td ><button onclick="clk(this)">( )</button></td>
+		</tr>
+	</table> -->
+	<input name="resposta" id="resposta"><button onclick="gerar()">Verificar</button>
+	<div id="tabulerito"></div>
+
+	<script>
+
+		function gerar(){
+			console.log(134234)
+
+			var rainhas = document.getElementById("resposta").value
+			rainhas = "32,39,31,18,9,21,30,27,35,11,0,8,33,22,15,13,7,10,36,25,4,1,29,19,24,37,20,3,38,28,34,6,17,14,5,23,2,16,12,26"
+			var tabulerito = document.getElementById("tabulerito")
+
+			rainhas = rainhas.split(",")
+			rainhas = rainhas.map((item)=>{return Number(item)})
+
+			var n = rainhas.lenght
+
+			for (var i = rainhas.length - 1; i >= 0; i--) {
+				for (var j = 0; j < rainhas.length; j++) {
+					if (j==rainhas.indexOf(i+1)){
+						console.log(i)
+						console.log(j)
+						console.log()
+						document.getElementById("tabulerito").innerHTML += `<button style="color:red" class='daniel${i+j}'>X</button>`	
+					}else{
+						// document.getElementById("tabulerito").innerHTML += `<button onclick='clk(this)' class='daniel${i+j}'>()</button>`
+						document.getElementById("tabulerito").innerHTML += `<button class='daniel${i+j}'>()</button>`
+					}
+				}
+					document.getElementById("tabulerito").innerHTML += "<br>"
+			}
+
+		}
+
+		function clk(elemento) {
+			elemento.style.color = 'red';
+			elemento.innerHTML = "X";
+		}
+	</script>
+</body>
+</html>

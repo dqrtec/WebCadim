@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/vue" ></script>
+	<style type="text/css">
+		.numero{
+			width: 100px;
+			height: 100px;
+			background-color: #156973;
+			display:inline-block;
+			margin: 1px;
+			font-size: 95px;
+		}
+		.numero:hover{
+			background-color: #a5f912;
+			cursor: pointer;
+		}
+		.vazio{
+			width: 100px;
+			height: 100px;
+			display:inline-block;
+			margin: 1px;
+			font-size: 95px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<span v-for="numero in tabuleiro">
+			<div  v-if="numero == 9 " class="vazio"></div>
+			<div v-on:click="mudarPosicao(numero)" v-else class="numero">{{numero}}</div>
+			<br v-show="2 == tabuleiro.indexOf(numero)">
+			<br v-show="5 == tabuleiro.indexOf(numero)">
+		</span>
+	</div>
+</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				tabuleiro:[1,2,3,4,5,6,7,8,9]
+			},
+			methods:{
+				mudarPosicao(numero){
+					var antigo = this.tabuleiro.indexOf(numero)
+					var novo = this.tabuleiro.indexOf(9)
+					if( (antigo == novo+1) || (antigo == novo-1) || (antigo == novo+3) || (antigo == novo-3)){
+						this.tabuleiro[novo] = numero
+						this.tabuleiro[antigo] = 9
+						this.novoTabuleiro()
+					}
+				},
+				novoTabuleiro(){
+					var novo = []
+					let qtd = this.tabuleiro.length
+					for(let i =0; i<qtd; i++){
+						novo.push(this.tabuleiro.pop())
+					}
+					for(let i =0; i<qtd; i++){
+						this.tabuleiro.push(novo.pop())
+					}
+				}
+			}
+		})
+	</script>
+</html>
