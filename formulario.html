@@ -1,0 +1,85 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body>
+	<div class="formulario">
+		<h3>Formulario de Login</h3>
+
+		<input type="" class="input" placeholder="Usuario">
+		<input type="password" class="input" placeholder="Senha">
+
+		<button class="input btn"> 
+			<i class="icon ion-md-lock"></i>
+			Login
+		</button>
+	</div>
+</body>
+
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body{
+		font-family: 'montserrat', sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background-color: #eee;
+	}
+
+	.formulario{
+		border-radius: 16px;
+		padding: 32px;
+		width: 100%;
+		max-width: 480px;
+		box-shadow: -2px -2px 6px #fff,
+					 2px  2px 1px #a4a400,
+					 4px  4px 1px #00a400;
+	}
+
+	.input{
+		border: none;
+		outline: none;
+		background: none;
+		border-radius: 16px;
+		margin: 0 auto 16px;
+
+		display: block;
+		width: 100%;
+		max-width: 320px;
+		box-shadow: inset -4px -4px 10px #fff,
+					inset  4px 	4px 10px #c4c4c4;
+
+		color: #aaa;
+		font-size: 18px;
+
+		transition: 0.2s ease-out;
+	}
+
+	.input:placeholder{
+		color: #ccc;
+	}
+
+	.input:focus{
+		box-shadow: inset -1px -1px 3px 1px #fff,
+					inset 1px 1px 3px 1px #c4c4c4;
+	}
+
+	.btn{
+		color #abab
+	}
+
+	h3{
+		color: #aaabbb;
+		font-size: 29px;
+		font-weight: 900;
+		text-shadow: 2px 2px 2px #00f, -1px -1px -1px #a4a4a4;
+		text-align: center;
+		margin-bottom: 16px;
+
+	}
+</style>

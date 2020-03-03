@@ -1,0 +1,55 @@
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+
+	.imagem-wrap{
+		max-width: 640px;
+		margin: 50px auto;
+	}
+
+	.imagem{
+		width: 100%;
+		padding-top: calc(100%/ (16/9));
+		background-image: url("http://www.exoticspotter.com/images/204/203459.jpg");
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.imagem:hover{
+		background-size: 175%;
+	}
+
+
+</style>
+
+
+
+<div  class="imagem-wrap">
+	<div class="imagem"></div>
+</div>
+
+
+<script type="text/javascript">
+	const imagem = document.querySelector('.imagem');
+	imagem.addEventListener('mousemove', function(e){
+		let width = imagem.offsetHeight;
+		let height = imagem.offsetHeight;
+		let mouseX = e.offsetX;
+		let mouseY = e.offsetY;
+
+		console.log(mouseX+ "  "+mouseY);
+
+		let bgPosX = ( mouseX / width  * 100);
+		let bgPosY = ( mouseY / height  * 100);
+
+		imagem.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+	})
+
+	imagem.addEventListener('mouseleave', function(e){
+		imagem.style.backgroundPosition = 'center'
+	})
+</script>
